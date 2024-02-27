@@ -1,17 +1,20 @@
-const modal = document.querySelector(".search-model");
-const modalBtn = document.querySelector(".icon_search");
-const closeBtn = document.querySelector(".icon_close");
-const inputSearch = document.querySelector("#search-input");
+const modal = () => {
+  const modalSearch = document.querySelector(".search-model");
+  const modalBtn = document.querySelector(".icon_search");
+  const closeBtn = document.querySelector(".icon_close");
+  const inputSearch = document.querySelector("#search-input");
 
-modalBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-});
+  modalBtn.addEventListener("click", () => {
+    modalSearch.classList.add("active");
+  });
 
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+  closeBtn.addEventListener("click", () => {
+    modalSearch.classList.remove("active");
+  });
 
-inputSearch.oninput = () => {
-  const result = inputSearch.value;
-  console.log(result);
+  inputSearch.addEventListener("input", () => {
+    console.log(inputSearch.value);
+  });
 };
+
+modal();
